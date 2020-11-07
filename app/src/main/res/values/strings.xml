@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Test job for DB2 Limited (Skalii)</string>
+    <string name="title_pb">ПриватБанк</string>
+    <string name="title_nbu">НБУ</string>
+</resources>

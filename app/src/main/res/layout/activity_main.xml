@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_exchange_rates"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary"
+    android:clipChildren="false">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_page_exchange_rates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_page_exchange_rates"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_page_exchange_rates"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="10dp"
+                tools:context=".ui.activity.MainActivity">
+
+                <include
+                    android:id="@+id/block_pb_title"
+                    layout="@layout/block_bank_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/table_exchange_rates_pb"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TableLayout
+                    android:id="@+id/table_exchange_rates_pb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:divider="@drawable/sh_divider_accent"
+                    android:showDividers="beginning|middle|end"
+                    app:layout_constraintBottom_toTopOf="@id/block_nbu_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/block_pb_title"
+                    app:layout_constraintVertical_chainStyle="packed">
+
+                    <TableRow
+                        android:id="@+id/row_titles_exchange_rates_pb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/col_currency_pb"
+                            style="@style/Text.Title.Row"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="Валюта"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/col_first_value"
+                            style="@style/Text.Title.Row"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="Покупка"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/col_second_value"
+                            style="@style/Text.Title.Row"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:text="Продажа"
+                            android:textAlignment="center" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <include
+                    android:id="@+id/divider_block_nbu"
+                    layout="@layout/view_divider_accent"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/block_nbu_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/table_exchange_rates_pb"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <include
+                    android:id="@+id/block_nbu_title"
+                    layout="@layout/block_bank_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintBottom_toTopOf="@id/table_exchange_rates_nbu"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/table_exchange_rates_pb"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TableLayout
+                    android:id="@+id/table_exchange_rates_nbu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:divider="@drawable/sh_divider_accent"
+                    android:showDividers="beginning|middle|end"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/block_nbu_title"
+                    app:layout_constraintVertical_chainStyle="packed">
+
+                </TableLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/table_row_exchange_nbu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_row"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="10dp"
+    android:weightSum="2">
+
+    <TextView
+        android:id="@+id/col_currency"
+        style="@style/Text.Content.Currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:text="Валюта"
+        tools:ignore="RtlCompat" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_col_values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/col_first_value"
+            style="@style/Text.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сумма"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toTopOf="@id/col_second_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/col_second_value"
+            style="@style/Text.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Количество"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/col_second_value_uah"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/col_first_value"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/col_second_value_uah"
+            style="@style/Text.Content.Currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" UAH"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/col_second_value"
+            app:layout_constraintTop_toBottomOf="@id/col_first_value"
+            tools:ignore="RtlCompat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</TableRow>
