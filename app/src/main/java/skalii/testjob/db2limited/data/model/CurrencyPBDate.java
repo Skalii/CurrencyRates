@@ -19,10 +19,10 @@ public class CurrencyPBDate implements CurrencyBase {
     @SerializedName("currency")
     private CurrencyType currencyType;
 
-    @SerializedName("purchaseRateNB")
+    @SerializedName("purchaseRate")
     private double buy;
 
-    @SerializedName("saleRateNB")
+    @SerializedName("saleRate")
     private double sale;
 
     public CurrencyType getCurrencyType() {

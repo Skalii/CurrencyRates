@@ -68,7 +68,9 @@ public class ComponentHelper {
             TableRow tableRow = (TableRow) inflater.inflate(tableRowRes, null);
 
             try {
-                if (row.getCurrencyType() == null || row.getCurrencyType() == CurrencyType.UAH) {
+                if ((row.getFirstValue() == 0 && row.getSecondValue() == 0)
+                        || row.getCurrencyType() == null
+                        || row.getCurrencyType() == CurrencyType.UAH) {
                     continue;
                 }
 
@@ -107,6 +109,10 @@ public class ComponentHelper {
                     tableLayout.getChildAt(i).setPressed(false);
                 }
 
+                for (int i = 0; i < anotherTableLayout.getChildCount(); i++) {
+                    anotherTableLayout.getChildAt(i).setPressed(false);
+                }
+
                 setFocusOnAnotherTable(row.getCurrencyType().getTitle(), anotherTableLayout);
             });
 
@@ -119,7 +125,7 @@ public class ComponentHelper {
     public static void setFocusOnAnotherTable(String currency, TableLayout tableLayout) {
         try {
 
-            TableRow tableRow = (TableRow) tableLayout.findViewWithTag(currency);
+            TableRow tableRow = tableLayout.findViewWithTag(currency);
 
             Rect rectangle = new Rect(0, 0, tableRow.getWidth(), tableRow.getHeight());
             tableRow.getDrawingRect(rectangle);

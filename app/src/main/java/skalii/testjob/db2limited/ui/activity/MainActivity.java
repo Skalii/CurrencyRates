@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout blockPBTitle = findViewById(R.id.block_pb_title);
         CardView cardViewPB = blockPBTitle.findViewById(R.id.card_calendar);
         setDateText(calendarPB, blockPBTitle.findViewById(R.id.text_date));
-        tablePB = (TableLayout) findViewById(R.id.table_exchange_rates_pb);
+        tablePB = findViewById(R.id.table_exchange_rates_pb);
 
         ConstraintLayout blockNBUTitle = findViewById(R.id.block_nbu_title);
         CardView cardViewNBU = blockNBUTitle.findViewById(R.id.card_calendar);
         setDateText(calendarNBU, blockNBUTitle.findViewById(R.id.text_date));
-        tableNBU = (TableLayout) findViewById(R.id.table_exchange_rates_nbu);
+        tableNBU = findViewById(R.id.table_exchange_rates_nbu);
 
         swipeRefreshLayout.post(() -> {
             swipeRefreshLayout.setRefreshing(true);
