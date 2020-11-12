@@ -4,15 +4,17 @@ package skalii.testjob.db2limited.ui.util;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.LayoutRes;
-import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,23 +30,25 @@ public class ComponentHelper {
 
     @SuppressLint("SimpleDateFormat")
     public static void setDateText(Calendar calendar, TextView textView) {
+        textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        textView.setTextColor(ContextCompat.getColor(textView.getContext(), R.color.color_accent));
         textView.setText(
                 new SimpleDateFormat("dd.MM.yyyy")
                         .format(calendar.getTime())
         );
     }
 
-    public static void clickOnCalendarCard(Context context,
-                                           Calendar calendar,
-                                           CardView cardView,
-                                           ExpressionRun expressionRun) {
+    public static void clickOnCalendar(Context context,
+                                       Calendar calendar,
+                                       View view,
+                                       ExpressionRun expressionRun) {
 
-        DatePickerDialog.OnDateSetListener date = (view, year, month, day) -> {
+        DatePickerDialog.OnDateSetListener date = (v, year, month, day) -> {
             calendar.set(year, month, day);
             expressionRun.run();
         };
 
-        cardView.setOnClickListener(v -> new DatePickerDialog(
+        view.setOnClickListener(v -> new DatePickerDialog(
                 context,
                 date,
                 calendar.get(Calendar.YEAR),

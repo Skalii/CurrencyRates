@@ -3,6 +3,8 @@ package skalii.testjob.db2limited.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
@@ -21,7 +23,7 @@ import skalii.testjob.db2limited.data.remote.RemoteServicePB;
 import skalii.testjob.db2limited.data.util.CallbackOperation;
 
 import static skalii.testjob.db2limited.ui.util.ComponentHelper.addRows;
-import static skalii.testjob.db2limited.ui.util.ComponentHelper.clickOnCalendarCard;
+import static skalii.testjob.db2limited.ui.util.ComponentHelper.clickOnCalendar;
 import static skalii.testjob.db2limited.ui.util.ComponentHelper.setDateText;
 
 
@@ -30,12 +32,13 @@ public class MainActivity extends AppCompatActivity {
     private final Calendar calendarPB = Calendar.getInstance();
     private final Calendar calendarNBU = Calendar.getInstance();
 
-    private Boolean isInitTablePB = false;
-    private Boolean isInitTableNBU = false;
+    private boolean isInitTablePB = false;
+    private boolean isInitTableNBU = false;
 
     private TableLayout tablePB;
     private TableLayout tableNBU;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private BottomGraph bottomGraph;
 
 
     @SuppressLint("SimpleDateFormat")
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         swipeRefreshLayout = findViewById(R.id.swipe_page_exchange_rates);
+        bottomGraph = new BottomGraph();
 
         ((TextView) findViewById(R.id.block_pb_title).findViewById(R.id.text_bank_title)).setText(R.string.title_pb);
         ((TextView) findViewById(R.id.block_nbu_title).findViewById(R.id.text_bank_title)).setText(R.string.title_nbu);
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             refreshTableNBU();
         });
 
-        clickOnCalendarCard(this, calendarPB, cardViewPB, () -> {
+        clickOnCalendar(this, calendarPB, cardViewPB, () -> {
             swipeRefreshLayout.post(() -> {
                 swipeRefreshLayout.setRefreshing(true);
                 setDateText(calendarPB, cardViewPB.findViewById(R.id.text_date));
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
-        clickOnCalendarCard(this, calendarNBU, cardViewNBU, () -> {
+        clickOnCalendar(this, calendarNBU, cardViewNBU, () -> {
             swipeRefreshLayout.post(() -> {
                 swipeRefreshLayout.setRefreshing(true);
                 setDateText(calendarNBU, cardViewNBU.findViewById(R.id.text_date));
@@ -86,6 +90,22 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (R.id.option_graph == item.getItemId()) {
+            bottomGraph.show(getSupportFragmentManager(), bottomGraph.getTag());
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     @SuppressLint("SimpleDateFormat")
