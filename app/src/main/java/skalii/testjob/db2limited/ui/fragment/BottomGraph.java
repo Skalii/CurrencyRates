@@ -1,4 +1,4 @@
-package skalii.testjob.db2limited.ui.activity;
+package skalii.testjob.db2limited.ui.fragment;
 
 
 import android.annotation.SuppressLint;

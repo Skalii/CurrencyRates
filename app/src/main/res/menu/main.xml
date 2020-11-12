@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/option_graph"
         android:icon="@drawable/ic_graph_border"
-        android:title="График зависимости курса гривны к доллару"
+        android:title="График"
         app:showAsAction="always" />
 
 </menu>
