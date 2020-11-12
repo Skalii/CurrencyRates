@@ -2,6 +2,7 @@ package skalii.testjob.db2limited.ui.activity;
 
 
 import android.annotation.SuppressLint;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import skalii.testjob.db2limited.data.remote.RemoteApiPB;
 import skalii.testjob.db2limited.data.remote.RemoteServiceNBU;
 import skalii.testjob.db2limited.data.remote.RemoteServicePB;
 import skalii.testjob.db2limited.data.util.CallbackOperation;
+import skalii.testjob.db2limited.ui.fragment.BottomGraph;
 
 import static skalii.testjob.db2limited.ui.util.ComponentHelper.addRows;
 import static skalii.testjob.db2limited.ui.util.ComponentHelper.clickOnCalendar;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.color_accent)));
 
         swipeRefreshLayout = findViewById(R.id.swipe_page_exchange_rates);
         bottomGraph = new BottomGraph();
