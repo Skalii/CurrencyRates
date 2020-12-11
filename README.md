@@ -1,4 +1,4 @@
-#1 Currency rates
+# Currency rates
 
 1. The first table on the main screen contains the PB currency rates.
 2. In the second table - NBU rates (there are more of them than PB).
@@ -7,10 +7,12 @@
 
 [Download release APK](https://github.com/Skalii/CurrencyRates/tree/master/resources/app-release.apk "Release APK")
 
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/main_1.jpg "Main screen with current date")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/main_2.jpg "Date picker")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/main_3.jpg "Another date selected")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/main_4.jpg "The second table scrolls to the cell with the corresponding currency and selects it")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_1.jpg "Short graph")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_2.jpg "Middle graph")
-![alt-текст](https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_3.jpg "Long graph")
+<p align="center">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/main_1.jpg" alt="Main screen with current date" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/main_2.jpg" alt="Date picker" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/main_3.jpg" alt="Another date selected" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/main_4.jpg" alt="The second table scrolls to the cell with the corresponding currency and selects it" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_1.jpg" alt="Short graph" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_2.jpg" alt="Middle graph" width="256" height="455">
+  <img src="https://github.com/Skalii/CurrencyRates/tree/master/resources/graph_3.jpg" alt="Long graph" width="256" height="455">
+</p>
